@@ -5,6 +5,8 @@ from info import views
 
 router = DefaultRouter()
 router.register('tags', views.TagViewSet)
+router.register('components', views.ComponentViewSet)
+
 app_name = "info"
 
 

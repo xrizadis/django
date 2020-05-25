@@ -41,3 +41,14 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Component(models.Model):
+    """Component to be used in an app"""
+
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

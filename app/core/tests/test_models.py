@@ -50,3 +50,11 @@ class ModelTests(TestCase):
             name="java"
         )
         self.assertEqual(str(tag), tag.name)
+
+    def test_components_str(self):
+        """test the component string representation"""
+        component = models.Component.objects.create(
+            user=sample_user(),
+            name="login"
+        )
+        self.assertEqual(str(component), component.name)
