@@ -9,3 +9,9 @@ docker-compose run app sh -c "python manage.py startapp core"
 
 create migrations
 docker-compose run app sh -c "python manage.py makemigrations core"
+
+start
+docker-compose up
+
+create app
+docker-compose run app sh -c "python manage.py startapp info"
