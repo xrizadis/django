@@ -50,19 +50,19 @@ class PrivateComponentsApiTest(TestCase):
         self.assertEqual(len(res.data), 1)
         self.assertEqual(res.data[0]['name'], component.name)
 
-    # def test_create_component_successful(self):
-    #     """test creating new component"""
-    #     payload = {'name': 'test tag'}
-    #     self.client.post(COMPONENTS_URL, payload)
+    def test_create_component_successful(self):
+        """test creating new component"""
+        payload = {'name': 'chart'}
+        self.client.post(COMPONENTS_URL, payload)
 
-    #     exists = Component.objects.filter(
-    #         user=self.user,
-    #         name=payload['name']
-    #     ).exists()
-    #     self.assertTrue(exists)
+        exists = Component.objects.filter(
+            user=self.user,
+            name=payload['name']
+        ).exists()
+        self.assertTrue(exists)
 
-    # def test_create_tag_invalid(self):
-    #     """test creating tag with invalid payload"""
-    #     payload = {"name": ""}
-    #     res = self.client.post(TAGS_URL, payload)
-    #     self.assertEqual(res.status_code, 400)
+    def test_create_tag_invalid(self):
+        """test creating tag with invalid payload"""
+        payload = {"name": ""}
+        res = self.client.post(COMPONENTS_URL, payload)
+        self.assertEqual(res.status_code, 400)

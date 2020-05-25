@@ -8,7 +8,7 @@ configure app
 docker-compose run app sh -c "python manage.py startapp core"
 
 create migrations
-docker-compose run app sh -c "python manage.py makemigrations core"
+docker-compose run --rm app sh -c "python manage.py makemigrations core"
 
 start
 docker-compose up
